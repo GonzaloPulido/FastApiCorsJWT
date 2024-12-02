@@ -11,17 +11,15 @@ from fastapi.middleware.cors import CORSMiddleware # type: ignore
 
 
 # Iniciar proyecto: uvicorn app.main:app --reload
+# uvicorn app:app --host 0.0.0.0 --port 8000
 
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8000))  # Usar PORT de entorno o 8000 como predeterminado
-    uvicorn.run(apt, host="0.0.0.0", port=port)
 
 app = FastAPI()
 
 # Configuración de CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Permitir todos los orígenes (puedes restringir esto a ["http://localhost:3000"] más adelante)
+    allow_origins=["https://react-cors-iazxuje0o-gonzalopulidos-projects.vercel.app"],  
     allow_credentials=True,
     allow_methods=["*"],  # Permitir todos los métodos (GET, POST, etc.)
     allow_headers=["*"],  # Permitir todos los encabezados
