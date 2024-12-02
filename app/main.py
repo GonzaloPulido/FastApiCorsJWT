@@ -15,7 +15,7 @@ app = FastAPI()
 # Configuración de CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://react-cors-iazxuje0o-gonzalopulidos-projects.vercel.app"],  
+    allow_origins=["https://react-cors-jwt.vercel.app/"],  
     allow_credentials=True,
     allow_methods=["*"],  # Permitir todos los métodos (GET, POST, etc.)
     allow_headers=["*"],  # Permitir todos los encabezados
