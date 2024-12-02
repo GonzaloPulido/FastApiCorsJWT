@@ -1,4 +1,8 @@
 from http.client import HTTPException
+import os
+
+import apt
+import uvicorn
 from app.schemas import LoginRequest, TokenRequest, LogoutRequest
 from fastapi import FastAPI, Depends  # type: ignore
 from app.auth import get_current_user, create_access_token
@@ -7,6 +11,10 @@ from fastapi.middleware.cors import CORSMiddleware # type: ignore
 
 
 # Iniciar proyecto: uvicorn app.main:app --reload
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))  # Usar PORT de entorno o 8000 como predeterminado
+    uvicorn.run(apt, host="0.0.0.0", port=port)
 
 app = FastAPI()
 
