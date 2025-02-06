@@ -3,7 +3,7 @@ from app.schemas import LoginRequest, TokenRequest, LogoutRequest
 from fastapi import FastAPI, Depends  # type: ignore
 from app.auth import get_current_user, create_access_token
 from app.users import login, logout
-from fastapi.middleware.cors import CORSMiddleware # type: ignore
+from starlette.middleware.cors import CORSMiddleware # type: ignore
 
 
 # Iniciar proyecto: uvicorn app.main:app --reload
